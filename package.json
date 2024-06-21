@@ -1,0 +1,19 @@
+{
+  "name": "node-api-test",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js", 
+    "build": "mkdir -p dist && find . -maxdepth 1 ! -name 'dist' ! -name 'node_modules' ! -name '.' | xargs -I {} cp -r {} dist/ && echo 'Build complete.'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  }
+}
