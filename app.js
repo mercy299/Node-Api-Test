@@ -13,9 +13,9 @@ app.get('/', (req, res) => {
 // Sample route to get user data
 app.get('/users', (req, res) => {
   const users = [
-    { id: 1, name: 'Alice' },
+    { id: 1, name: 'Annie' },
     { id: 2, name: 'Bob' },
-    { id: 3, name: 'Charlie' },
+    { id: 3, name: 'Gon' },
   ];
   res.json(users);
 });

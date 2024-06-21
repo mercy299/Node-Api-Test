@@ -14,14 +14,16 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Production stage
-FROM nginx:mainline-alpine
+FROM aniekeme01/base-image:latest
 
-RUN rm /etc/nginx/conf.d/default.conf
+RUN apk update && \
+    apk add --no-cache nodejs npm
 
-COPY nginx.conf /etc/nginx/conf.d/
+WORKDIR /app
 
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY --from=build-stage /app /app
+
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "app.js"]
